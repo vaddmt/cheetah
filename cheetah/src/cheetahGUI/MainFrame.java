@@ -10,5 +10,7 @@ public class MainFrame extends JFrame {
         this.setResizable(false);
         this.setLocation(50, 50);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+        System.out.println("привет");
     }
 }
