@@ -2,11 +2,13 @@ package cheetahGUI;
 
 import javax.swing.*;
 import java.awt.*;
+import cheetahMGR.*;
 
 public class MainButton extends JButton {
     public MainButton(String s){
         super();
         this.setText(s);
+        this.setSize(Globals.SCREEN_RESOLUTION_WIDTH * 2 / 3, 40);
     }
     
     @Override

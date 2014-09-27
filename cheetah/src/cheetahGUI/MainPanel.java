@@ -11,21 +11,15 @@ public class MainPanel extends JPanel {
         super();
         this.setLayout(null);
         
+        int interval = 0;      
         btnNewGame = new MainButton("New Game");
-        btnNewGame.setLocation(0, 30);
-        btnNewGame.setSize(210, 40);
-        
+        btnNewGame.setLocation(0, interval += 50);      
         btnRecords = new MainButton("Records");
-        btnRecords.setLocation(0, 80);
-        btnRecords.setSize(210, 40);
-        
+        btnRecords.setLocation(0, interval += 50);    
         btnAbout = new MainButton("About");
-        btnAbout.setLocation(0, 130);
-        btnAbout.setSize(210, 40);
-        
+        btnAbout.setLocation(0, interval += 50);   
         btnExit = new MainButton("Exit");
-        btnExit.setLocation(0, 180);
-        btnExit.setSize(210, 40);
+        btnExit.setLocation(0, interval += 50);
         
         this.add(btnNewGame);
         this.add(btnRecords);
