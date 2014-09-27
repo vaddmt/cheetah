@@ -14,16 +14,16 @@ public class MainPanel extends JPanel implements ActionListener {
         this.setLayout(null);
         
         int interval = 0;      
-        btnNewGame = new MainButton("New Game");
+        btnNewGame = new MainButton("NEW GAME");
         btnNewGame.setLocation(0, interval += 50);
         btnNewGame.addActionListener(this);
-        btnRecords = new MainButton("Records");
+        btnRecords = new MainButton("RECORDS");
         btnRecords.setLocation(0, interval += 50);
         btnRecords.addActionListener(this);
-        btnAbout = new MainButton("About");
+        btnAbout = new MainButton("ABOUT");
         btnAbout.setLocation(0, interval += 50);
         btnAbout.addActionListener(this);
-        btnExit = new MainButton("Exit");
+        btnExit = new MainButton("EXIT");
         btnExit.setLocation(0, interval += 50);
         btnExit.addActionListener(this);
         
@@ -48,13 +48,13 @@ public class MainPanel extends JPanel implements ActionListener {
         if(source == btnNewGame){
             Messenger.Output("btnNewGame was pressed!");
         }
-        if(source == btnRecords){
+        else if(source == btnRecords){
             Messenger.Output("btnRecords was pressed!");
         }
-        if(source == btnAbout){
+        else if(source == btnAbout){
             Messenger.Output("btnAbout was pressed!");
         }
-        if(source == btnExit){
+        else if(source == btnExit){
             System.exit(0);
         }
     }
