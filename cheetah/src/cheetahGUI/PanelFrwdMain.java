@@ -3,30 +3,33 @@ package cheetahGUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.*;
 import cheetahMGR.*;
 
-public class MainPanel extends JPanel implements ActionListener {
+public class PanelFrwdMain extends PanelBack implements ActionListener {
     
     MainButton btnNewGame, btnRecords, btnAbout, btnExit;
     
-    public MainPanel(){
+    public PanelFrwdMain(){
         super();
         this.setLayout(null);
+              
+        btnNewGame = new MainButton("NEW GAME", 240, 40);
+        btnRecords = new MainButton("RECORDS",  240, 40);
+        btnAbout   = new MainButton("ABOUT",    240, 40);
+        btnExit    = new MainButton("EXIT",     240, 40);
         
-        int interval = 0;      
-        btnNewGame = new MainButton("NEW GAME");
+        int interval = 0;
         btnNewGame.setLocation(0, interval += 50);
-        btnNewGame.addActionListener(this);
-        btnRecords = new MainButton("RECORDS");
         btnRecords.setLocation(0, interval += 50);
-        btnRecords.addActionListener(this);
-        btnAbout = new MainButton("ABOUT");
         btnAbout.setLocation(0, interval += 50);
-        btnAbout.addActionListener(this);
-        btnExit = new MainButton("EXIT");
         btnExit.setLocation(0, interval += 50);
-        btnExit.addActionListener(this);
         
+        btnNewGame.addActionListener(this);
+        btnRecords.addActionListener(this);
+        btnAbout.addActionListener(this);
+        btnExit.addActionListener(this);        
+
         this.add(btnNewGame);
         this.add(btnRecords);
         this.add(btnAbout);
@@ -34,11 +37,8 @@ public class MainPanel extends JPanel implements ActionListener {
     }
     
     @Override
-    public void paintComponent(Graphics g){
+    protected void paintComponent(Graphics g){
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D)g;
-        g2.setColor(Color.BLACK);
-        g2.fill(this.getVisibleRect());
     }
     
     @Override
@@ -46,7 +46,11 @@ public class MainPanel extends JPanel implements ActionListener {
         Object source = event.getSource();
         
         if(source == btnNewGame){
-            Messenger.Output("btnNewGame was pressed!");
+            Globals.mainFrame.getContentPane().remove(Globals.mainFrame.panelA);
+            Globals.mainFrame.getContentPane().add(Globals.mainFrame.panelB);
+            Globals.mainFrame.invalidate();
+            Globals.mainFrame.validate();
+            Globals.mainFrame.repaint();
         }
         else if(source == btnRecords){
             Messenger.Output("btnRecords was pressed!");

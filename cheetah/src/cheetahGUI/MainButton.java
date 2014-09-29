@@ -4,24 +4,35 @@ import javax.swing.*;
 import java.awt.*;
 import cheetahMGR.*;
 
-public class MainButton extends JButton {   
-    public MainButton(String s){
-        super();
-        this.setText(s);
-        this.setBorder(null);
-        this.setSize(Globals.SCREEN_RESOLUTION_WIDTH * 2 / 3, 40);
+public class MainButton extends JButton {
+    
+    protected int     width, height;
+    protected Polygon shape;
+    
+    public MainButton(String s, int w, int h) {
+        super(s);
+	this.setSize(w, h);
+	this.setContentAreaFilled(false);
+	this.setFocusPainted(false);
+	this.setBorder(null);
+
+	shape = new Polygon();
+	shape.addPoint(0, 0);
+	shape.addPoint(this.getSize().width, 0);
+	shape.addPoint(this.getSize().width, this.getSize().height);
+	shape.addPoint(0, this.getSize().height);
     }
     
     @Override
     public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D)g;
-        g2.setColor(Color.YELLOW);
-        if(getModel().isPressed()){
-            g2.setColor(Color.ORANGE);
+        if(getModel().isArmed()) {
+            g.setColor(Color.ORANGE);
         }
-        g2.fill(this.getVisibleRect());      
-        g2.setColor(Color.BLACK);
-        g2.drawString(this.getText(), 10, 25);
+        else {
+            g.setColor(Color.YELLOW);
+        }
+        
+        g.fillPolygon(shape);
+        super.paintComponent(g);
     }
 }

@@ -1,8 +1,13 @@
 package cheetahGUI;
 
 import javax.swing.*;
+import cheetahMGR.*;
 
 public class MainFrame extends JFrame {
+    
+    public PanelFrwdMain  panelA = new PanelFrwdMain();
+    public PanelFrwdMode panelB  = new PanelFrwdMode();
+    
     public MainFrame(String caption, int width, int height){
         super(caption);
         this.setSize(width, height);
@@ -10,7 +15,7 @@ public class MainFrame extends JFrame {
         this.setLocation(50, 50);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        this.getContentPane().add(new MainPanel());
+        this.getContentPane().add(panelA);
         
         this.setVisible(true);
     }
