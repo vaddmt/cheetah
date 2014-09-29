@@ -1,8 +1,7 @@
 package cheetahGUI;
 
-import javax.swing.*;
 import java.awt.*;
-import cheetahMGR.*;
+import javax.swing.*;
 
 public class MainButton extends JButton {
     

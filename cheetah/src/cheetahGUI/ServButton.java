@@ -1,9 +1,6 @@
 package cheetahGUI;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.*;
-import cheetahMGR.*;
 
 public class ServButton extends MainButton {
     

@@ -1,7 +1,6 @@
 package cheetahGUI;
 
 import javax.swing.*;
-import cheetahMGR.*;
 
 public class MainFrame extends JFrame {
     
