@@ -4,8 +4,8 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame {
     
-    public PanelFrwdMain  panelA = new PanelFrwdMain();
-    public PanelFrwdMode panelB  = new PanelFrwdMode();
+    public PanelFrwdMain panelA = new PanelFrwdMain();
+    public PanelFrwdMode panelB = new PanelFrwdMode();
     
     public MainFrame(String caption, int width, int height){
         super(caption);
