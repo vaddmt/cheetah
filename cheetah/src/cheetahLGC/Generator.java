@@ -1,19 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package cheetahGenerator;
-import java.util.Random;
-import java.lang.Math;
+package cheetahLGC;
 
-/**
- *
- * @author Aleksey
- */
+
+import java.lang.Math;
+import java.util.Random;
+
+
 public class Generator {
-private int first;
-private int second;
-Random rnd;
+    
+    private int first;
+    private int second;
+    Random      rnd;
 
     public Generator(){
         rnd = new Random();

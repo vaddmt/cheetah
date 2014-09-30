@@ -2,11 +2,11 @@ package cheetahGUI;
 
 import java.awt.*;
 
-public class ServButton extends MainButton {
+public class ButtonServ extends ButtonMain {
     
     protected int edge = 5;
     
-    public ServButton(String s, int w, int h) {
+    public ButtonServ(String s, int w, int h) {
         super(s, w, h);
 
         shape = new Polygon();

@@ -3,12 +3,12 @@ package cheetahGUI;
 import java.awt.*;
 import javax.swing.*;
 
-public class MainButton extends JButton {
+public class ButtonMain extends JButton {
     
     protected int     width, height;
     protected Polygon shape;
     
-    public MainButton(String s, int w, int h) {
+    public ButtonMain(String s, int w, int h) {
         super(s);
 	this.setSize(w, h);
 	this.setContentAreaFilled(false);
@@ -17,9 +17,9 @@ public class MainButton extends JButton {
 
 	shape = new Polygon();
 	shape.addPoint(0, 0);
-	shape.addPoint(this.getSize().width, 0);
-	shape.addPoint(this.getSize().width, this.getSize().height);
-	shape.addPoint(0, this.getSize().height);
+	shape.addPoint(this.getSize().width - 1, 0);
+	shape.addPoint(this.getSize().width - 1, this.getSize().height - 1);
+	shape.addPoint(0, this.getSize().height - 1);
     }
     
     @Override

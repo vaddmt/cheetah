@@ -7,22 +7,22 @@ import java.awt.event.ActionListener;
 
 public class PanelFrwdMain extends PanelBack implements ActionListener {
     
-    MainButton btnNewGame, btnRecords, btnAbout, btnExit;
+    ButtonMain btnNewGame, btnRecords, btnAbout, btnExit;
     
     public PanelFrwdMain(){
         super();
         this.setLayout(null);
               
-        btnNewGame = new MainButton("NEW GAME", 240, 40);
-        btnRecords = new MainButton("RECORDS",  240, 40);
-        btnAbout   = new MainButton("ABOUT",    240, 40);
-        btnExit    = new MainButton("EXIT",     240, 40);
+        btnNewGame = new ButtonMain("NEW GAME", 250, 50);
+        btnRecords = new ButtonMain("RECORDS",  250, 50);
+        btnAbout   = new ButtonMain("ABOUT",    250, 50);
+        btnExit    = new ButtonMain("EXIT",     250, 50);
         
         int interval = 0;
-        btnNewGame.setLocation(0, interval += 50);
-        btnRecords.setLocation(0, interval += 50);
-        btnAbout.setLocation(0, interval += 50);
-        btnExit.setLocation(0, interval += 50);
+        btnNewGame.setLocation(0, interval += 60);
+        btnRecords.setLocation(0, interval += 60);
+        btnAbout.setLocation(0, interval += 60);
+        btnExit.setLocation(0, interval += 60);
         
         btnNewGame.addActionListener(this);
         btnRecords.addActionListener(this);
