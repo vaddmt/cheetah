@@ -5,7 +5,6 @@ import javax.swing.*;
 
 public class ButtonMain extends JButton {
     
-    protected int     width, height;
     protected Polygon shape;
     
     public ButtonMain(String s, int w, int h) {

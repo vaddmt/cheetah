@@ -51,9 +51,12 @@ public class PanelFrwdMode extends PanelBack implements ActionListener {
         Object source = event.getSource();
         if(source == btnBack) {
             Globals.mainFrame.getContentPane().remove(Globals.mainFrame.panelB);
-            Globals.mainFrame.getContentPane().add(Globals.mainFrame.panelA);
-            Globals.mainFrame.invalidate();
-            Globals.mainFrame.validate();			        
+            Globals.mainFrame.getContentPane().add(Globals.mainFrame.panelA);			        
+        }
+
+        if(source == btnStart) {
+            Globals.mainFrame.getContentPane().remove(Globals.mainFrame.panelB);
+            Globals.mainFrame.getContentPane().add(Globals.mainFrame.panelC);			        
         }
         
         btnStart.setEnabled(false);
@@ -64,7 +67,9 @@ public class PanelFrwdMode extends PanelBack implements ActionListener {
                 btnStart.setEnabled(true);
             }                      
         }
-        
+
+        Globals.mainFrame.invalidate();
+        Globals.mainFrame.validate();
         Globals.mainFrame.repaint();
     }
 }

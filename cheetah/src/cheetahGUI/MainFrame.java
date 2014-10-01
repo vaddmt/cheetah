@@ -6,6 +6,7 @@ public class MainFrame extends JFrame {
     
     public PanelFrwdMain panelA = new PanelFrwdMain();
     public PanelFrwdMode panelB = new PanelFrwdMode();
+    public PanelFrwdPlay panelC = new PanelFrwdPlay();
     
     public MainFrame(String caption, int width, int height){
         super(caption);
