@@ -1,9 +1,7 @@
 package cheetahLGC;
 
-
 import java.lang.Math;
 import java.util.Random;
-
 
 public class Generator {
     
@@ -16,8 +14,8 @@ public class Generator {
     }
     
     public int[] getNextPairValue(int min, int max){
-        first = min + rnd.nextInt(Math.abs(max-min));
-        second =  min + rnd.nextInt(Math.abs(max-min));
-        return new int[]{first,second};
+        first  = min + rnd.nextInt(Math.abs(max - min));
+        second = min + rnd.nextInt(Math.abs(max - min));
+        return new int[] { first, second };
     }
 }
