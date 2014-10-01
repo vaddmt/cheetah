@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class PanelFrwdMode extends PanelBack implements ActionListener {
     
-    ButtonServ     btnBack;
+    ButtonServ     btnBack, btnStart;
     ButtonSelect[] modes;
 
     public PanelFrwdMode(){
@@ -16,9 +16,15 @@ public class PanelFrwdMode extends PanelBack implements ActionListener {
         
         // initializing the BACK button
         btnBack = new ButtonServ("BACK", 130, 50);
-        btnBack.setLocation(Globals.SCREEN_RESOLUTION_WIDTH / 2 - 60,
+        btnBack.setLocation(Globals.SCREEN_RESOLUTION_WIDTH / 2 - btnBack.getWidth() - 5,
                             Globals.SCREEN_RESOLUTION_HEIGHT - btnBack.getHeight() - 50);
         btnBack.addActionListener(this);
+
+        btnStart = new ButtonServ("GO and Calc!", 130, 50);
+        btnStart.setLocation(Globals.SCREEN_RESOLUTION_WIDTH / 2 + 5,
+                             Globals.SCREEN_RESOLUTION_HEIGHT - btnBack.getHeight() - 50);
+        btnStart.addActionListener(this);
+        btnStart.setEnabled(false);
         
         // initializing 5 buttons for changing gamemode
         modes = new ButtonSelect[5];
@@ -31,7 +37,8 @@ public class PanelFrwdMode extends PanelBack implements ActionListener {
             this.add(modes[i]);
         }
         
-        this.add(btnBack);    
+        this.add(btnBack);
+        this.add(btnStart);
 	}
 
     @Override
@@ -49,13 +56,13 @@ public class PanelFrwdMode extends PanelBack implements ActionListener {
             Globals.mainFrame.validate();			        
         }
         
+        btnStart.setEnabled(false);
         for(int i = 0; i < modes.length; i++) {
+            modes[i].setState(false);
             if(source == modes[i]) {
                 modes[i].setState(true);
-            }              
-            else {
-                modes[i].setState(false);
-            }        
+                btnStart.setEnabled(true);
+            }                      
         }
         
         Globals.mainFrame.repaint();

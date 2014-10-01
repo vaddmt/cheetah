@@ -28,7 +28,12 @@ public class ButtonMain extends JButton {
             g.setColor(Color.ORANGE);
         }
         else {
-            g.setColor(Color.YELLOW);
+            if(this.isEnabled()) {
+                g.setColor(Color.YELLOW);
+            }
+            else {
+                g.setColor(Color.GRAY);
+            }
         }
         
         g.fillPolygon(shape);
