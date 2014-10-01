@@ -13,9 +13,17 @@ public class Generator {
         rnd = new Random();
     }
     
-    public int[] getNextPairValue(int min, int max){
+    public void getNextPairValue(int min, int max){
         first  = min + rnd.nextInt(Math.abs(max - min));
         second = min + rnd.nextInt(Math.abs(max - min));
-        return new int[] { first, second };
+        //return new int[] { first, second };
+    }
+    
+    public int getFirst(){
+        return first;
+    }
+    
+    public int getSecond(){
+        return second;
     }
 }
