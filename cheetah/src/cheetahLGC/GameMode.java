@@ -1,36 +1,56 @@
 package cheetahLGC;
 
+import cheetahMGR.Globals;
+import java.lang.Math;
+import java.util.Random;
+
 public class GameMode {
     
-    private int   mode;
-    private float timer;
-    private float bonusDifficulty, bonusStrike;
-    private int   bonusQuantity;
+    private int currentOperation;
+    private String resultString;
+    private Generator gen;
+    private int result;
+    //public enum modes {ADD,DIFF,MUL,DIV,ALL};
     
-    public GameMode(int m) {
-        mode            = m;
-        bonusDifficulty = 1;
-        bonusStrike     = 1;
-        bonusQuantity   = 0;
+    public GameMode(int mode){
+        result = 0;
+        resultString = "";
+        gen = new Generator();
+        currentOperation = mode;
+        gen.getNextPairValue(Globals.MIN_VALUE, Globals.MAX_VALUE);
+        if (currentOperation == 4){
+            Random rd = new Random();
+            currentOperation = rd.nextInt(4);
+        }
+        switch(currentOperation)
+        {
+/*            case 4:
+                Random rd = new Random();
+                currentOperation = rd.nextInt(3);*/
+            case 0: result = gen.getFirst() + gen.getSecond(); 
+                resultString = Integer.toString(gen.getFirst()) + " + " + Integer.toString(gen.getSecond()) + " = ";
+                break;
+            case 1: 
+                result = gen.getFirst() - gen.getSecond(); 
+                resultString = Integer.toString(gen.getFirst()) + " - " + Integer.toString(gen.getSecond()) + " = ";
+                break;
+            case 2:
+                result = gen.getFirst() * gen.getSecond(); 
+                resultString = Integer.toString(gen.getFirst()) + " * " + Integer.toString(gen.getSecond()) + " = ";
+                break;
+            case 3:
+                result = gen.getFirst() % gen.getSecond(); 
+                resultString = Integer.toString(gen.getFirst()) + " % " + Integer.toString(gen.getSecond()) + " = ";
+                break;
+        }
     }
     
-    public int[] generateTask() {
-        return null;
+    public String getResultString(){
+        return resultString;
     }
     
-    public void setBonusDifficulty(float value){
-        bonusDifficulty = value;
+    public int getResult(){
+        return result;
     }
-    
-    public void setBonusStrike(float value){
-        bonusStrike = value;
-    }
-    
-    public void bonusQuantity(int value){
-        bonusQuantity = value;
-    }
-    
-    public float calculateFinalResult(int baseValue){
-        return 0;
-    }
+            
 }
