@@ -1,7 +1,7 @@
 package cheetahGUI;
 
-import cheetahMGR.*;
-import java.awt.*;
+import cheetahMGR.Globals;
+import java.awt.Graphics;
 
 public class ButtonSelect extends ButtonMain {
 

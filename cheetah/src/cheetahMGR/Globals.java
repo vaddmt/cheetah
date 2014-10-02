@@ -13,6 +13,7 @@ public class Globals {
     // Colors
     public static Color COLOR_BUTTON_PRIMARY   = Color.YELLOW;
     public static Color COLOR_BUTTON_SECONDARY = Color.ORANGE;
+    public static Color COLOR_BUTTON_DISABLE   = Color.GRAY;
     public static Color COLOR_SELECT_OFF       = new Color(0, 0, 0, 128);
     public static Color COLOR_SELECT_ON        = new Color(255, 255, 128, 128);
     public static Color COLOR_DIGITS           = new Color(0, 0, 0, 200);

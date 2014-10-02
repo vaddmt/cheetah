@@ -1,7 +1,7 @@
 package cheetahGUI;
 
 import cheetahMGR.Globals;
-import java.awt.*;
+import java.awt.Polygon;
 
 public class ButtonServ extends ButtonMain {
     

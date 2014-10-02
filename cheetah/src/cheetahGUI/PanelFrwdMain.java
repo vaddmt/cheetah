@@ -1,6 +1,7 @@
 package cheetahGUI;
 
-import cheetahMGR.*;
+import cheetahMGR.Globals;
+import cheetahMGR.Messenger;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

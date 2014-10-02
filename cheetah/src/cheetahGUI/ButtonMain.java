@@ -1,8 +1,9 @@
 package cheetahGUI;
 
 import cheetahMGR.Globals;
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import javax.swing.JButton;
 
 public class ButtonMain extends JButton {
     
@@ -33,7 +34,7 @@ public class ButtonMain extends JButton {
                 g.setColor(Globals.COLOR_BUTTON_PRIMARY);
             }
             else {
-                g.setColor(Color.GRAY);
+                g.setColor(Globals.COLOR_BUTTON_DISABLE);
             }
         }
         
