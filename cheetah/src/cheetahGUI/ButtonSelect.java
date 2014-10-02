@@ -1,5 +1,6 @@
 package cheetahGUI;
 
+import cheetahMGR.*;
 import java.awt.*;
 
 public class ButtonSelect extends ButtonMain {
@@ -15,13 +16,13 @@ public class ButtonSelect extends ButtonMain {
     @Override   
     public void paintComponent(Graphics g) {	
         if(currentState) {
-            g.setColor(new Color(255, 255, 128, 128));
+            g.setColor(Globals.COLOR_SELECT_ON);
         }
         else {
-            g.setColor(new Color(0, 0, 0, 128));
+            g.setColor(Globals.COLOR_SELECT_OFF);
         }
         g.fillPolygon(shape);
-        g.setColor(Color.YELLOW);
+        g.setColor(Globals.COLOR_BUTTON_PRIMARY);
         g.drawPolygon(shape);
     }
 }

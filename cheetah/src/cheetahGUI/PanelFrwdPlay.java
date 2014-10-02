@@ -35,6 +35,7 @@ public class PanelFrwdPlay extends PanelBack implements ActionListener {
             btnDigits[i].setLocation(5 + i * (digitsWidth + 5) - (i / digitColumns) * (i - i % digitColumns) * (digitsWidth + 5),
                                   Globals.SCREEN_RESOLUTION_HEIGHT - btnBack.getHeight() - digitsHeight * 2 - 50 - 25
                                   + (i / digitColumns) * (digitsHeight + 5));
+            btnDigits[i].setFont(Globals.FONT_BUTTON_32);
             btnDigits[i].addActionListener(this);
             this.add(btnDigits[i]);
         }
@@ -43,6 +44,7 @@ public class PanelFrwdPlay extends PanelBack implements ActionListener {
         btnClear = new ButtonServ("C", digitsWidth, digitsHeight * 2 + 5);
         btnClear.setLocation(Globals.SCREEN_RESOLUTION_WIDTH - digitsWidth - 10,
                           btnDigits[0].getLocation().y);
+        btnClear.setFont(Globals.FONT_BUTTON_32);
         btnClear.addActionListener(this);
         
         // initializing labels
@@ -53,14 +55,14 @@ public class PanelFrwdPlay extends PanelBack implements ActionListener {
         lblSecondVal.setLocation(Globals.SCREEN_RESOLUTION_WIDTH - lblSecondVal.getWidth() - 10,
                                  Globals.SCREEN_RESOLUTION_HEIGHT / 2 - lblFirstVal.getHeight() * 3 + 20);
         
-        lblYourAnswer = new LabelText("Your answer is...", 24, Color.YELLOW);
+        lblYourAnswer = new LabelText("Your answer is...", 24, Globals.COLOR_BUTTON_PRIMARY);
         lblYourAnswer.setLocation(0, lblSecondVal.getLocation().y + 70);
         
         lblResultVal = new LabelDial("", 300, 60, 5);
         lblResultVal.setLocation((Globals.SCREEN_RESOLUTION_WIDTH - lblResultVal.getWidth()) / 2,
                                  lblYourAnswer.getLocation().y + lblYourAnswer.getSize().height + 10);
         
-        lblMathOperand = new LabelText("+", 64, Color.YELLOW);
+        lblMathOperand = new LabelText("+", 64, Globals.COLOR_TEXT_ALTERNATIVE);
         lblMathOperand.setLocation(0, (lblSecondVal.getLocation().y + lblFirstVal.getLocation().y) / 2);
   
         this.add(lblYourAnswer);

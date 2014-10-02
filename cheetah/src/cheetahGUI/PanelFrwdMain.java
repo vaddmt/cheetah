@@ -47,9 +47,6 @@ public class PanelFrwdMain extends PanelBack implements ActionListener {
         if(source == btnNewGame){
             Globals.mainFrame.getContentPane().remove(Globals.mainFrame.panelA);
             Globals.mainFrame.getContentPane().add(Globals.mainFrame.panelB);
-            Globals.mainFrame.invalidate();
-            Globals.mainFrame.validate();
-            Globals.mainFrame.repaint();
         }
         else if(source == btnRecords){
             Messenger.Output("btnRecords was pressed!");
@@ -60,5 +57,9 @@ public class PanelFrwdMain extends PanelBack implements ActionListener {
         else if(source == btnExit){
             System.exit(0);
         }
+        
+        Globals.mainFrame.invalidate();
+        Globals.mainFrame.validate();
+        Globals.mainFrame.repaint();
     }
 }

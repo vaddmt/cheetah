@@ -13,10 +13,11 @@ public class PanelBack extends JPanel {
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-        GradientPaint gradient = new GradientPaint(0, 0, Color.BLACK, 0, Globals.SCREEN_RESOLUTION_HEIGHT, Color.GRAY, true);
+        GradientPaint gradient = new GradientPaint(0, 0, Globals.COLOR_BACKGROUND_GRAD1,
+                                                   0, Globals.SCREEN_RESOLUTION_HEIGHT, Globals.COLOR_BACKGROUND_GRAD2, true);
         g2.setPaint(gradient);
         g2.fill(this.getVisibleRect());
-        g2.setColor(Color.BLACK);
+        g2.setColor(Globals.COLOR_GAPLINE);
         for(int i = 0; i < Globals.SCREEN_RESOLUTION_HEIGHT; i += 5) {
             g2.draw(new Line2D.Double(0, i, Globals.SCREEN_RESOLUTION_WIDTH, i));
         }

@@ -1,5 +1,6 @@
 package cheetahGUI;
 
+import cheetahMGR.Globals;
 import java.awt.*;
 import javax.swing.*;
 
@@ -13,6 +14,7 @@ public class ButtonMain extends JButton {
 	this.setContentAreaFilled(false);
 	this.setFocusPainted(false);
 	this.setBorder(null);
+        this.setFont(Globals.FONT_BUTTON_24);
 
 	shape = new Polygon();
 	shape.addPoint(0, 0);
@@ -24,11 +26,11 @@ public class ButtonMain extends JButton {
     @Override
     public void paintComponent(Graphics g){
         if(getModel().isArmed()) {
-            g.setColor(Color.ORANGE);
+            g.setColor(Globals.COLOR_BUTTON_SECONDARY);
         }
         else {
             if(this.isEnabled()) {
-                g.setColor(Color.YELLOW);
+                g.setColor(Globals.COLOR_BUTTON_PRIMARY);
             }
             else {
                 g.setColor(Color.GRAY);

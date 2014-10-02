@@ -18,8 +18,8 @@ public class LabelDial extends JLabel {
     public LabelDial(String s, int w, int h, int edge_size){
         super(s);
         this.setSize(w, h);
-        this.setFont(new Font("Arial", Font.BOLD, 64));
-        this.setForeground(new Color(0, 0, 0, 200));
+        this.setFont(Globals.FONT_LABEL_64);
+        this.setForeground(Globals.COLOR_DIGITS);
         this.setVerticalAlignment(JLabel.CENTER);
         this.setHorizontalAlignment(JLabel.CENTER);
         edge = edge_size;
@@ -45,15 +45,19 @@ public class LabelDial extends JLabel {
     @Override
     public void paintComponent(Graphics g){
         Graphics2D g2 = (Graphics2D)g;
-        GradientPaint gradient = new GradientPaint(0, 0, Color.GRAY, 0, this.getSize().height / 2, Color.DARK_GRAY, true);
+        GradientPaint gradient = new GradientPaint(0, 0, Globals.COLOR_DIGITS_GRADIENT1,
+                                                   0, this.getSize().height / 2, Globals.COLOR_DIGITS_GRADIENT2, true);
         g2.setPaint(gradient);
         g.fillPolygon(shapeTOP);
         
-        gradient = new GradientPaint(0, this.getSize().height / 2, Color.GRAY, 0, this.getSize().height, Color.DARK_GRAY, true);
+        gradient = new GradientPaint(0, this.getSize().height / 2, Globals.COLOR_DIGITS_GRADIENT1,
+                                     0, this.getSize().height, Globals.COLOR_DIGITS_GRADIENT2, true);
         g2.setPaint(gradient);
         g.fillPolygon(shapeBOTTOM);
+        
         super.paintComponent(g);
-        g2.setColor(Color.BLACK);
+        
+        g2.setColor(Globals.COLOR_GAPLINE);
         g2.drawLine(0, this.getSize().height / 2, this.getSize().width, this.getSize().height / 2);
     }
 }
